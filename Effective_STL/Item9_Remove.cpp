@@ -50,9 +50,52 @@ void removeList()
 	cout << endl;
 }
 
+void insertVectorWrong()
+{
+	vector<int> vec;
+	for(int i=0; i < 5; i++)
+		vec.push_back(i);
+	for(int i=0; i < vec.size(); i++)
+		cout << vec[i] << " ";
+	//insert 6 between 3 and 4
+	vector<int>::iterator iter = vec.begin();
+	while(iter != vec.end())
+	{
+		if(*iter == 4)
+			vec.insert(iter, 6);
+		iter++;
+	}
+	for(int i=0; i < vec.size(); i++)
+		cout << vec[i] << " ";
+}
+
+void insertVector()
+{
+	vector<int> vec;
+	for(int i=0; i < 5; i++)
+		vec.push_back(i);
+	for(int i=0; i < vec.size(); i++)
+		cout << vec[i] << " ";
+	cout << endl;
+	//insert 6 between 3 and 4
+	vector<int>::iterator iter = vec.begin();
+	while(iter != vec.end())
+	{
+		if(*iter == 4)
+			iter = vec.insert(iter, 6);
+		iter+=2;
+	}
+	for(int i=0; i < vec.size(); i++)
+		cout << vec[i] << " ";
+	cout << endl;
+}
+
+
 int main()
 {
 	removeVectorWrong();
 	removeVector();
 	removeList();
+	//insertVectorWrong();
+	insertVector();
 }
