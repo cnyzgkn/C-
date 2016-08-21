@@ -16,9 +16,13 @@ void duplicateUseUniquePtr()
 
 void UniquePtrInSTLVector()
 {
-    std::vector<std::unique_ptr<MyClass>> uniquePtrVec; 
-    for(auto i: uniquePtrVec)
-        i->Func();
+    std::vector< std::unique_ptr<MyClass> > uniquePtrVec; 
+    std::unique_ptr<MyClass> uniquePtr1(new MyClass());
+    //uniquePtrVec.push_back(uniquePtr1); // error
+    uniquePtrVec.push_back(std::move(uniquePtr1)); // correct
+    uniquePtrVec.push_back(std::move(std::make_unique<MyClass>())); // correct
+    //for(auto i: uniquePtrVec)
+    //    (*i).Func();
 }
 
 int main()

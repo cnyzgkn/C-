@@ -2,9 +2,12 @@
 #include <iostream>
 #include <string>
 
+template<typename T> class Queue;
+
 template<typename T> class QueueItem
 {
-public:
+	friend class Queue<T>;
+private:
 	QueueItem(const T& t) : mItem(t), next(NULL) {};
 	T mItem;
 	QueueItem* next;

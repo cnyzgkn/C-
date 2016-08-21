@@ -35,7 +35,7 @@ void test3()
 	}
 }
 
-// auto C++ 11
+// auto C++ 11 iterator
 void test4()
 {
 	vector<int> vec(1000);
@@ -45,12 +45,23 @@ void test4()
 	}
 }
 
+// C++ 11 auto & for
+void test5()
+{
+	vector<int> vec(1000);
+	for(auto i : vec)
+	{
+		auto n = i;
+	}
+}
+
 int main()
 {
 	test1();
 	test2();
 	test3();
 	test4();
+	test5();
 
 	return 0;
 }
