@@ -51,16 +51,12 @@ auto compose(T1 t1, T2 t2) -> decltype(t1 + t2)
    return t1+t2;  
 }  
 
-
-
 int main()
 {
 	loop1();
 	loop2();
 	loop3();
-
 	auto v = compose(2, 3.14); // v's type is double  
 	cout << "v = " << v << endl;
-
 	return 0;
 }

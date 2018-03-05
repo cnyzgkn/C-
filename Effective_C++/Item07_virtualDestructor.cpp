@@ -32,7 +32,7 @@ public:
 int main()
 {
 	Base* pA = new Derived();
-	delete pA;
+	delete pA; //Derived destructor not called
 
 	Derived* pB = new Derived();
 	delete pB;

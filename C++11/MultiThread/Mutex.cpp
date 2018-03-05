@@ -18,7 +18,7 @@ void Increase_mutex_try_lock()
 {
 	for(int i = 0; i < 1000; ++i)
 	{
-		//if current mutex be locked by other thread, return fale intead of blocked
+		//if current mutex be locked by other thread, return fail intead of blocked
 		if(mtx.try_lock())
 		{
 			++counter;
