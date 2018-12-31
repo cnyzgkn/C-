@@ -7,6 +7,11 @@ int returnVal()
 
 int main(int argc, char const *argv[])
 {
+	int &&i = 1; // i = 1
+	const int num = 2;
+	i = num; // i = 2
+
+
 	int a = returnVal();
 	int &b = a;
 	//int &c = returnVal(); //左值引用无法绑定到右值
