@@ -69,10 +69,13 @@ MyString& MyString::operator=(MyString&& other)
 	 	return *this;
 
 	delete [] m_data;
-	m_data = other.m_data;
+	
+	m_data = std::move(other.m_data);
 	other.m_data = NULL;
 	m_length = other.m_length;
 	other.m_length = 0;
+	
+	m_length= std::move(other.m_length);
 	return *this;
 }
 
